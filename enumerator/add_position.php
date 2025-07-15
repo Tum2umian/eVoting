@@ -1,13 +1,14 @@
 <?php
-require_once '../../config/db.php';
-require_once '../../includes/header.php';
+session_start();
+require_once '../config/db.php';
+require_once '../includes/header.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'enumerator') {
     header("Location: ../auth/login.php");
     exit();
 }
 
-$session_id = $_GET['id'] ?? 0;
+$session_id = $_GET['session_id'] ?? 0;
 
 // Verify this enumerator owns this session
 $stmt = $pdo->prepare("SELECT * FROM VoteSession WHERE VoteSessionID = ? AND EnumeratorID = ?");
@@ -94,4 +95,4 @@ $candidates_count = $candidates_stmt->fetchColumn();
     </div>
 </div>
 
-<?php require_once '../../includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

@@ -21,9 +21,9 @@
                     <?php elseif (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'voter'): ?>
                         <li class="nav-item"><a class="nav-link" href="../voter/dashboard.php">Dashboard</a></li>
                     <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="../auth/login.php">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../auth/register_voter.php">Register as Voter</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../auth/register_enumerator.php">Register as Enumerator</a></li>
+                        <li class="nav-item"><a class="nav-link" href="auth/login.php">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="auth/register_voter.php">Register as Voter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="auth/register_enumerator.php">Register as Enumerator</a></li>
                     <?php endif; ?>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item"><a class="nav-link" href="../auth/logout.php">Logout</a></li>

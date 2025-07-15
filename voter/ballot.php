@@ -1,6 +1,7 @@
 <?php
-require_once '../../config/db.php';
-require_once '../../includes/header.php';
+session_start();
+require_once '../config/db.php';
+require_once '../includes/header.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'voter') {
     header("Location: ../auth/login.php");

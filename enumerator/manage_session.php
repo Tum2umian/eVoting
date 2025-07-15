@@ -1,6 +1,13 @@
 <?php
-require_once '../../config/db.php';
-require_once '../../includes/header.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
+<?php
+session_start();
+require_once '../config/db.php';
+require_once '../includes/header.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'enumerator') {
     header("Location: ../auth/login.php");
@@ -94,4 +101,4 @@ $candidates_count = $candidates_stmt->fetchColumn();
     </div>
 </div>
 
-<?php require_once '../../includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>
